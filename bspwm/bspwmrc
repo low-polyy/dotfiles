@@ -1,16 +1,16 @@
 #! /bin/sh
 
 #pgrep -x sxhkd > /dev/null || sxhkd &
+xrandr --output DP-2 --primary --mode 1920x1080 --rotate normal --output HDMI-1 --mode 1920x1080 --rotate normal --left-of DP-2
 sxhkd &
 nm-applet &
 $HOME/.config/polybar/launch.sh
-feh --bg-fill /home/aka/Downloads/haibane.jpg
+feh --bg-fill /home/aka/Downloads/forest-foggy-mist-pine-trees-early-morning-5k-6000x4000-310.jpg
 picom &
-lxsession &
 
 #bspc monitor -d I II III IV V VI VII VIII IX X
-bspc monitor -d I II III IV V
-
+bspc monitor DP-2 -d I II III IV V
+bspc monitor HDMI-1 -d VI VII VIII 
 
 bspc config border_width         5
 bspc config window_gap          15
@@ -19,11 +19,9 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a firefox desktop='^5'
-bspc rule -a Emacs state=tiled
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+if [ "$HOST" = "DP-2" ]; then
+	bspc rule -a firefox desktop='^5'
+fi
 
+bspc rule -a Zathura state=tiled
 
