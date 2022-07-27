@@ -1,0 +1,158 @@
+# This is a demo config to show some of the most important commands more easily.
+# This is meant to be changed and configured, as it is intentionally kept sparse.
+# For a more advanced configuration example see my dotfiles:
+# https://github.com/FelixKratz/dotfiles
+
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+
+##### Bar Appearance #####
+# Configuring the general appearance of the bar, these are only some of the
+# options available. For all options see:
+# https://felixkratz.github.io/SketchyBar/config/bar
+# If you are looking for other colors, see the color picker:
+# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+
+sketchybar --bar height=25        \
+                 blur_radius=50   \
+                 position=top     \
+                 padding_left=10  \
+                 padding_right=10 \
+		 corner_radius=5 \
+                 color=0xff282828
+
+##### Changing Defaults #####
+# We now change some default values that are applied to all further items
+# For a full list of all available item properties see:
+# https://felixkratz.github.io/SketchyBar/config/items
+
+sketchybar --default updates=when_shown                    \
+                     drawing=on                            \
+                     icon.font="Hack Nerd Font:Bold:14.0"  \
+                     icon.color=0xffffffff                 \
+                     label.font="Hack Nerd Font:Bold:14.0" \
+                     label.color=0xffffffff                \
+                     label.padding_left=4                  \
+                     label.padding_right=6                 \
+                     icon.padding_left=4                   \
+                     icon.padding_right=4
+
+                                                                
+sketchybar    --add item apple.logo left                                                      \
+              --set apple.logo icon=􀣺                                                         \
+                               icon.font="Hack Nerd Font:Bold:14.0"                                  \
+                               label.drawing=off                                              \
+                               click_script="sketchybar -m --set \$NAME popup.drawing=toggle" \
+                               popup.background.border_width=4                                \
+                               popup.background.corner_radius=3                               \
+                               popup.background.border_color=0xff9dd274                       \
+                               icon.padding_right=9                                           \
+											      \
+              --default background.padding_left=5                                             \
+                        background.padding_right=5                                            \
+                        icon.padding_right=5                                                  \
+                        icon.font="Hack Nerd Font:Bold:14.0"                                  \
+                        label.font="Hack Nerd Font:Bold:13.0"                                 \
+                                                                                              \
+              --add item apple.preferences popup.apple.logo                                   \
+              --set apple.preferences icon=􀺽                                                  \
+                               label="Preferences"                                            \
+                               click_script="open -a 'System Preferences';                    
+                                             sketchybar -m --set apple.logo popup.drawing=off"\
+              --add item apple.activity popup.apple.logo                                      \
+              --set apple.activity icon=􀒓                                                     \
+                               label="Activity"                                               \
+                               click_script="open -a 'Activity Monitor';                       
+                                             sketchybar -m --set apple.logo popup.drawing=off"\
+              --add item apple.lock popup.apple.logo                                          \
+              --set apple.lock icon=􀒳                                                         \
+                               label="Lock Screen"                                            \
+                               click_script="pmset displaysleepnow;                           
+                                             sketchybar -m --set apple.logo popup.drawing=off"\
+
+
+
+##### Adding Mission Control Space Indicators #####
+# Now we add some mission control spaces:
+# https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
+# to indicate active and available mission control spaces
+
+SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+
+for i in "${!SPACE_ICONS[@]}"
+do
+  sid=$(($i+1))
+  sketchybar --add space space.$sid left                                 \
+             --set space.$sid associated_space=$sid                      \
+                              icon=${SPACE_ICONS[i]}                     \
+                              icon.padding_left=8                        \
+                              icon.padding_right=8                       \
+                              background.padding_left=5                  \
+                              background.padding_right=5                 \
+                              background.color=0x44ffffff                \
+                              background.corner_radius=5                 \
+                              background.height=22                       \
+                              background.drawing=off                     \
+                              label.drawing=off                          \
+                              script="$PLUGIN_DIR/space.sh"              \
+                              click_script="yabai -m space --focus $sid"
+done
+
+##### Adding Left Items #####
+# We add some regular items to the left side of the bar
+# only the properties deviating from the current defaults need to be set
+
+sketchybar --add item space_separator left                            \
+           --set space_separator icon=                               \
+                                 background.padding_left=15           \
+                                 background.padding_right=15          \
+                                 label.drawing=on                     \
+                                                                      \
+								      \
+								      \
+sketchybar --add item package_monitor left			      \
+	   --set package_monitor script="$PLUGIN_DIR/package_monitor.sh" \
+	   --set pakckage_monitor icon=			      \
+								      \ 
+sketchybar -m \
+    --add item weather left \
+    --set weather \
+        update_freq=600 \
+        script="$PLUGIN_DIR/weather.sh" \
+        icon.font="Hack Nerd Font:Regular:14.0" \
+        background.drawing=on \
+##### Adding Right Items #####
+# In the same way as the left items we can add items to the right side.
+# Additional position (e.g. center) are available, see:
+# https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
+
+sketchybar --add item clock right                        \
+           --set clock update_freq=1                     \
+           --set clock script="$PLUGIN_DIR/clock.sh"     \
+	   --set clock icon=                            \
+	   --set clock icon.padding_left=9		 \
+	   						 \
+sketchybar --add item date right			 \
+	   --set date updare_freq=1			 \
+	   --set date script="$PLUGIN_DIR/date.sh"	 \
+	   --set date icon=				 \
+	   --set date icon.padding_left=9		 \
+	   						 \ 
+sketchybar --add item battery right                      \
+           --set battery script="$PLUGIN_DIR/battery.sh" \
+           --set battery update_freq=3                   \
+           --subscribe battery system_woke		 \
+	   --set battery icon=				 \
+	   						 \
+sketchybar --add item wifi right			 \
+	   --set wifi script="PLUGIN_DIR/wifi.sh"	 \
+	   --set wifi update_freq=5			 \
+	   --set wifi icon=				 \
+
+##### Finalizing Setup #####
+# The below command is only needed at the end of the initial configuration and
+# should never be run in an item script.
+
+sketchybar --update
+
+echo "sketchybar configuration loaded.."
+
