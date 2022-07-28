@@ -2,121 +2,154 @@
 
 API_KEY="9c8508bea4766dc4c5a431947d3cbc51" # insert api key here
 CITY="Montreal" # insert city here
+LAT="45.501690" # insert latitude here
+LON="-73.567253" # insert longitude here
 
-# first comment is description, second is icon number
+# choose your units of measurement
+METRIC="units=metric" 
+IMPERIAL="units=imperial"
+
+
+# exhaustive list of weather icons (day)
 weather_icons_day=(
-    [1000]=  # Sunny/113
-    [1003]=  # Partly cloudy/116
-    [1006]=  # Cloudy/119
-    [1009]=  # Overcast/122
-    [1030]=  # Mist/143
-    [1063]=  # Patchy rain possible/176
-    [1066]=  # Patchy snow possible/179
-    [1069]=  # Patchy sleet possible/182
-    [1072]=  # Patchy freezing drizzle possible/185
-    [1087]=  # Thundery outbreaks possible/200
-    [1114]=  # Blowing snow/227
-    [1117]=  # Blizzard/230
-    [1135]=  # Fog/248
-    [1147]=  # Freezing fog/260
-    [1150]=  # Patchy light drizzle/263
-    [1153]=  # Light drizzle/266
-    [1168]=  # Freezing drizzle/281
-    [1171]=  # Heavy freezing drizzle/284
-    [1180]=  # Patchy light rain/293
-    [1183]=  # Light rain/296
-    [1186]=  # Moderate rain at times/299
-    [1189]=  # Moderate rain/302
-    [1192]=  # Heavy rain at times/305
-    [1195]=  # Heavy rain/308
-    [1198]=  # Light freezing rain/311
-    [1201]=  # Moderate or heavy freezing rain/314
-    [1204]=  # Light sleet/317
-    [1207]=  # Moderate or heavy sleet/320
-    [1210]=  # Patchy light snow/323
-    [1213]=  # Light snow/326
-    [1216]=  # Patchy moderate snow/329
-    [1219]=  # Moderate snow/332
-    [1222]=  # Patchy heavy snow/335
-    [1225]=  # Heavy snow/338
-    [1237]=  # Ice pellets/350
-    [1240]=  # Light rain shower/353
-    [1243]=  # Moderate or heavy rain shower/356
-    [1246]=  # Torrential rain shower/359
-    [1249]=  # Light sleet showers/362
-    [1252]=  # Moderate or heavy sleet showers/365
-    [1255]=  # Light snow showers/368
-    [1258]=  # Moderate or heavy snow showers/371
-    [1261]=  # Light showers of ice pellets/374
-    [1264]=  # Moderate or heavy showers of ice pellets/377
-    [1273]=  # Patchy light rain with thunder/386
-    [1276]=  # Moderate or heavy rain with thunder/389
-    [1279]=  # Patchy light snow with thunder/392
-    [1282]=  # Moderate or heavy snow with thunder/395
+    [800]=  # Clear sky(01d/n)
+    [801]=  # Few clouds(02d/n)
+    [802]=  # Scattered clouds(03d/n)
+    [803]=  # Broken clouds(04d/n)
+    [804]=  # Overcast clouds(04d/n)
+
+    [701]=  # Mist(50d)
+    [711]=  # Smoke(50d)
+    [721]=  # Haze(50d)
+    [731]=  # Sand/dust swirls(50d)
+    [741]=  # Fog(50d)
+    [751]=  # Sand(50d)
+    [761]=  # Dust(50d)
+    [762]=  # Ash(50d)
+    [771]=  # Squall(50d)
+    [781]=  # Tornado(50d)
+
+    [500]=  # Light rain(10d)
+    [501]=  # Moderate rain(10d)
+    [502]=  # Heavy rain(10d)
+    [503]=  # Very heavy rain(10d)
+    [504]= # Extreme rain(10d)
+    [511]=  # Freezing rain(13d)
+    [520]=  # Light shower rain(09d)
+    [521]=  # Shower rain(09d)
+    [522]=  # Heavy shower rain(09d)
+    [531]=  # Ragged shower rain(09d)
+
+    [200]=  # Thunderstorm with light rain(11d)
+    [201]=  # Thunderstorm with rain(11d)
+    [202]=  # Thunderstorm with heavy rain(11d)
+    [210]=  # Light thunderstorm(11d)
+    [211]=  # Thunderstorm(11d)
+    [212]=  # Heavy thunderstorm(11d)
+    [221]=  # Ragged thunderstorm(11d)
+    [230]=  # Thunderstorm with light drizzle(11d)
+    [231]=  # Thunderstorm with drizzle(11d)
+    [232]=  # Thunderstorm with heavy drizzle(11d)
+
+    [300]=  # Light drizzle(09d)
+    [301]=  # Drizzle(09d)
+    [302]=  # Heavy drizzle(09d)
+    [310]=  # Light drizzle rain(09d)
+    [311]=  # Drizzle rain(09d)
+    [312]=  # Heavy drizzle rain(09d)
+    [313]=  # Shower rain & drizzle(09d)
+    [314]=  # Heavy shower rain & drizzle(09d)
+    [321]=  # Shower drizzle(09d)
+
+    [600]=  # Light snow(13d)
+    [601]=  # Snow(13d)
+    [602]=  # Heavy snow(13d)
+    [611]=  # Sleet(13d)
+    [612]=  # Light shower sleet(13d)
+    [613]=  # Shower sleet(13d)
+    [615]=  # Light rain & snow(13d)
+    [616]=  # Rain & snow(13d)
+    [620]=  # Light shower snow(13d)
+    [621]=  # Shower snow(13d)
+    [622]=  # Heavy shower snow(13d)
 )
 
+# exhaustive list of weather icons (night)
 weather_icons_night=(
-    [1000]=  # Clear/113
-    [1003]=  # Partly cloudy/116
-    [1006]=  # Cloudy/119
-    [1009]=  # Overcast/122
-    [1030]=  # Mist/143
-    [1063]=  # Patchy rain possible/176
-    [1066]=  # Patchy snow possible/179
-    [1069]=  # Patchy sleet possible/182
-    [1072]=  # Patchy freezing drizzle possible/185
-    [1087]=  # Thundery outbreaks possible/200
-    [1114]=  # Blowing snow/227
-    [1117]=  # Blizzard/230
-    [1135]=  # Fog/248
-    [1147]=  # Freezing fog/260
-    [1150]=  # Patchy light drizzle/263
-    [1153]=  # Light drizzle/266
-    [1168]=  # Freezing drizzle/281
-    [1171]=  # Heavy freezing drizzle/284
-    [1180]=  # Patchy light rain/293
-    [1183]=  # Light rain/296
-    [1186]=  # Moderate rain at times/299
-    [1189]=  # Moderate rain/302
-    [1192]=  # Heavy rain at times/305
-    [1195]=  # Heavy rain/308
-    [1198]=  # Light freezing rain/311
-    [1201]=  # Moderate or heavy freezing rain/314
-    [1204]=  # Light sleet/317
-    [1207]=  # Moderate or heavy sleet/320
-    [1210]=  # Patchy light snow/323
-    [1213]=  # Light snow/326
-    [1216]=  # Patchy moderate snow/329
-    [1219]=  # Moderate snow/332
-    [1222]=  # Patchy heavy snow/335
-    [1225]=  # Heavy snow/338
-    [1237]=  # Ice pellets/350
-    [1240]=  # Light rain shower/353
-    [1243]=  # Moderate or heavy rain shower/356
-    [1246]=  # Torrential rain shower/359
-    [1249]=  # Light sleet showers/362
-    [1252]=  # Moderate or heavy sleet showers/365
-    [1255]=  # Light snow showers/368
-    [1258]=  # Moderate or heavy snow showers/371
-    [1261]=  # Light showers of ice pellets/374
-    [1264]=  # Moderate or heavy showers of ice pellets/377
-    [1273]=  # Patchy light rain with thunder/386
-    [1276]=  # Moderate or heavy rain with thunder/389
-    [1279]=  # Patchy light snow with thunder/392
-    [1282]=  # Moderate or heavy snow with thunder/395
-)
+    [800]=  # Clear sky(01d/n)
+    [801]=  # Few clouds(02d/n)
+    [802]=  # Scattered clouds(03d/n)
+    [803]=  # Broken clouds(04d/n)
+    [804]=  # Overcast clouds(04d/n)
+
+    [701]=  # Mist(50d)
+    [711]=  # Smoke(50d)
+    [721]=  # Haze(50d)
+    [731]=  # Sand/dust swirls(50d)
+    [741]=  # Fog(50d)
+    [751]=  # Sand(50d)
+    [761]=  # Dust(50d)
+    [762]=  # Ash(50d)
+    [771]=  # Squall(50d)
+    [781]=  # Tornado(50d)
+
+    [500]=  # Light rain(10d)
+    [501]=  # Moderate rain(10d)
+    [502]=  # Heavy rain(10d)
+    [503]=  # Very heavy rain(10d)
+    [504]= # Extreme rain(10d)
+    [511]=  # Freezing rain(13d)
+    [520]=  # Light shower rain(09d)
+    [521]=  # Shower rain(09d)
+    [522]=  # Heavy shower rain(09d)
+    [531]=  # Ragged shower rain(09d)
+
+    [200]=  # Thunderstorm with light rain(11d)
+    [201]=  # Thunderstorm with rain(11d)
+    [202]=  # Thunderstorm with heavy rain(11d)
+    [210]=  # Light thunderstorm(11d)
+    [211]=  # Thunderstorm(11d)
+    [212]=  # Heavy thunderstorm(11d)
+    [221]=  # Ragged thunderstorm(11d)
+    [230]=  # Thunderstorm with light drizzle(11d)
+    [231]=  # Thunderstorm with drizzle(11d)
+    [232]=  # Thunderstorm with heavy drizzle(11d)
+
+    [300]=  # Light drizzle(09d)
+    [301]=  # Drizzle(09d)
+    [302]=  # Heavy drizzle(09d)
+    [310]=  # Light drizzle rain(09d)
+    [311]=  # Drizzle rain(09d)
+    [312]=  # Heavy drizzle rain(09d)
+    [313]=  # Shower rain & drizzle(09d)
+    [314]=  # Heavy shower rain & drizzle(09d)
+    [321]=  # Shower drizzle(09d)
+
+    [600]=  # Light snow(13d)
+    [601]=  # Snow(13d)
+    [602]=  # Heavy snow(13d)
+    [611]=  # Sleet(13d)
+    [612]=  # Light shower sleet(13d)
+    [613]=  # Shower sleet(13d)
+    [615]=  # Light rain & snow(13d)
+    [616]=  # Rain & snow(13d)
+    [620]=  # Light shower snow(13d)
+    [621]=  # Shower snow(13d)
+    [622]=  # Heavy shower snow(13d)
+)   
+
 
 CITY=$(echo "$CITY" | curl -Gso /dev/null -w %{url_effective} --data-urlencode @- "" | cut -c 3- || true)
-data=$(curl -s "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY")
-condition=$(echo $data | jq -r '.current.condition.code')
-temp=$(echo $data | jq -r '.current.temp_f')
-feelslike=$(echo $data | jq -r '.current.feelslike_f')
-humidity=$(echo $data | jq -r '.current.humidity')
-is_day=$(echo $data | jq -r '.current.is_day')
+data=$(curl -s "https://api.openweathermap.org/data/2.5/weather?lat=$LAT&lon=$LON&appid=$API_KEY&$METRIC")
+condition=$(echo $data | jq -r '.weather.id')
+temp=$(echo $data | jq -r '.main.temp')
+feelslike=$(echo $data | jq -r '.main.feels_like')
+humidity=$(echo $data | jq -r '.main.humidity')
+is_day=$(echo $data | jq -r '.dt')
 
 [ "$is_day" = "1" ] && icon=$weather_icons_day[$condition] || icon=$weather_icons_night[$condition]
 
 sketchybar -m \
     --set weather \
         icon="$icon" \
-        label="${temp}°F"
+        label="${temp}°C"
