@@ -3,6 +3,8 @@ call plug#begin()
 Plug 'preservim/vim-pencil'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'ron89/thesaurus_query.vim'
+Plug 'kamykn/spelunker.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'andweeb/presence.nvim'
@@ -12,6 +14,7 @@ call plug#end()
 set autoindent
 set linebreak
 set wrap
+set nospell
 
 
 "SoftPencil mode on/off (fn+8)
@@ -28,5 +31,34 @@ map <F6> :setlocal spell! spelllang=en_us <CR>
 "Set spell checking to French (fn+7)
 map <F7> :setlocal spell! spelllang=fr <CR>
 
-set thesaurus+=/Users/ura0aka/.config/nvim/mthesaur.txt
+set thesaurus+=/Users/ura0aka/.config/nvim/thesaurus/mthesaur.txt
 set complete+=s
+
+
+"Thesaurus query (for synonyms)
+map <F3> :ThesaurusQueryLookupCurrentWord <CR>
+map <F4> :ThesaurusQueryReplaceCurrentWord <CR>
+let g:tq_mthesaur_file="/Users/ura0aka/.config/nvim/thesaurus/mthesaur.txt"
+let g:tq_enabled_backends=["synonymo_fr","cnrtl_fr","mthesaur_txt"]
+
+
+"Spelunker stuff (better spell checking)
+let g:enable_spelunker_vim = 1
+let g:enable_spelunker_vim_on_readonly = 0
+let g:spelunker_target_min_char_len = 3
+let g:spelunker_max_suggest_words = 15
+let g:spelunker_max_hi_words_each_buf = 100
+
+
+" Spellcheck type: (default: 1)
+" 1: File is checked for spelling mistakes when opening and saving. This
+" may take a bit of time on large files.
+" 2: Spellcheck displayed words in buffer. Fast and dynamic. The waiting time
+" depends on the setting of CursorHold `set updatetime=1000`.
+let g:spelunker_check_type = 1
+let g:spelunker_highlight_type = 1
+let g:spelunker_disable_account_name_checking = 1
+let g:spelunker_disable_acronym_checking = 1
+
+
+
