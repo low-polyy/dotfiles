@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-API_KEY="9c8508bea4766dc4c5a431947d3cbc51" # insert api key here
+API_KEY="" # insert api key here
 CITY="Montreal" # insert city here
 LAT="45.501690" # insert latitude here
 LON="-73.567253" # insert longitude here
