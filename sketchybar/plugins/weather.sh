@@ -1,4 +1,5 @@
 #!/bin/zsh
+# This script is made to work with the OpenWeatherMap.org API
 
 API_KEY="" # insert api key here
 CITY="Montreal" # insert city here
