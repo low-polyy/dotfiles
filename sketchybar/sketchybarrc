@@ -17,7 +17,7 @@ sketchybar --bar height=25        \
                  position=top     \
                  padding_left=10  \
                  padding_right=10 \
-		 corner_radius=5 \
+		 corner_radius=0 \
                  color=0xff282828
 
 ##### Changing Defaults #####
@@ -48,8 +48,8 @@ sketchybar    --add item apple.logo left                                        
                                icon.padding_right=9                                           \
 											      \
               --default background.padding_left=5                                             \
-                        background.padding_right=5                                            \
-                        icon.padding_right=5                                                  \
+                        background.padding_right=9                                            \
+                        icon.padding_right=9                                                  \
                         icon.font="Hack Nerd Font:Bold:14.0"                                  \
                         label.font="Hack Nerd Font:Bold:13.0"                                 \
                                                                                               \
@@ -68,35 +68,66 @@ sketchybar    --add item apple.logo left                                        
                                label="Lock Screen"                                            \
                                click_script="pmset displaysleepnow;                           
                                              sketchybar -m --set apple.logo popup.drawing=off"\
+# Window spaces indicator
+sketchybar --bar height=32 color=0x95282828 \
+           --add space space.1 left\
+           --set space.1 associated_display=1 \
+                         associated_space=1 \
+                         icon= \
+                         icon.color=0xffffffff \
+                         icon.highlight_color=0xffd3859a \
+                         icon.padding_left=4 \
+                         icon.padding_right=3 \
+                         icon.background.color=0xffd3859a \
+                         icon.background.height=2 \
+                         icon.background.y_offset=-13 \
+                         background.padding_left=4 \
+                         background.padding_right=2 \
+                         script="$PLUGIN_DIR/space.sh" \
+           --add space space.2 left \
+           --set space.2 associated_display=1 \
+                         associated_space=2 \
+                         icon= \
+                         icon.color=0xffffffff \
+                         icon.highlight_color=0xffd3859a \
+                         icon.padding_left=3 \
+                         icon.padding_right=3 \
+                         icon.background.height=2 \
+                         icon.background.color=0xffd3859a \
+                         icon.background.y_offset=-13 \
+                         background.padding_left=2 \
+                         background.padding_right=2 \
+                         script="$PLUGIN_DIR/space.sh"\
+           --add space space.3 left \
+           --set space.3 associated_display=1 \
+                         associated_space=3 \
+                         icon= \
+                         icon.color=0xffffffff \
+                         icon.highlight_color=0xffd3859a \
+                         icon.padding_left=3 \
+                         icon.padding_right=3 \
+                         icon.background.height=2 \
+                         icon.background.color=0xffd3859a \
+                         icon.background.y_offset=-13 \
+                         background.padding_left=2 \
+                         background.padding_right=2 \
+                         script="$PLUGIN_DIR/space.sh"\
+           --add space space.4 left \
+           --set space.4 associated_display=1 \
+                         associated_space=4 \
+                         icon= \
+                         icon.color=0xffffffff \
+                         icon.highlight_color=0xffd3859a \
+                         icon.padding_left=3 \
+                         icon.padding_right=3 \
+                         icon.background.height=2 \
+                         icon.background.color=0xffd3859a \
+                         icon.background.y_offset=-13 \
+                         background.padding_left=2 \
+                         background.padding_right=2 \
+                         script="$PLUGIN_DIR/space.sh"\
 
-
-
-##### Adding Mission Control Space Indicators #####
-# Now we add some mission control spaces:
-# https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
-# to indicate active and available mission control spaces
-
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
-
-for i in "${!SPACE_ICONS[@]}"
-do
-  sid=$(($i+1))
-  sketchybar --add space space.$sid left                                 \
-             --set space.$sid associated_space=$sid                      \
-                              icon=${SPACE_ICONS[i]}                     \
-                              icon.padding_left=8                        \
-                              icon.padding_right=8                       \
-                              background.padding_left=5                  \
-                              background.padding_right=5                 \
-                              background.color=0x44ffffff                \
-                              background.corner_radius=5                 \
-                              background.height=22                       \
-                              background.drawing=off                     \
-                              label.drawing=off                          \
-                              script="$PLUGIN_DIR/space.sh"              \
-                              click_script="yabai -m space --focus $sid"
-done
-
+sketchybar --update
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar
 # only the properties deviating from the current defaults need to be set
@@ -104,22 +135,14 @@ done
 sketchybar --add item space_separator left                            \
            --set space_separator icon=                               \
                                  background.padding_left=15           \
-                                 background.padding_right=15          \
+                                 background.padding_right=10          \
                                  label.drawing=on                     \
                                                                       \
 								      \
 								      \
 sketchybar --add item package_monitor left			      \
 	   --set package_monitor script="$PLUGIN_DIR/package_monitor.sh" \
-	   --set pakckage_monitor icon=			      \
-								      \ 
-sketchybar -m \
-    --add item weather left \
-    --set weather \
-        update_freq=600 \
-        script="$PLUGIN_DIR/weather.sh" \
-        icon.font="Hack Nerd Font:Regular:14.0" \
-        background.drawing=on \
+	   --set package_monitor icon=			      \
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
 # Additional position (e.g. center) are available, see:
@@ -137,6 +160,14 @@ sketchybar --add item date right			 \
 	   --set date icon=				 \
 	   --set date icon.padding_left=9		 \
 	   						 \ 
+sketchybar -m 						 \
+    	--add item weather right 			 \
+    --set weather 					 \
+        update_freq=600 				 \
+        script="$PLUGIN_DIR/weather.sh" 		 \
+        icon.font="Hack Nerd Font:Regular:14.0" 	 \
+        background.drawing=on 				 \
+							 \
 sketchybar --add item battery right                      \
            --set battery script="$PLUGIN_DIR/battery.sh" \
            --set battery update_freq=3                   \

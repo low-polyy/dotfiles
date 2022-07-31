@@ -1,14 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
-args=()
-while read -r index window
-do
-  if [ "$window" = "null" ]
-  then
-    args+=(--set "space${index}" "icon=${index}")
-  else
-    args+=(--set "space${index}" "icon=${index}°")
-  fi
-done <<< "$(yabai -m query --spaces | jq -r '.[] | [.index, .windows[0]] | @sh')"
+if [ "$SELECTED" = "true" ]; then
+  args+=(--set $NAME icon.background.y_offset=-12)
+else
+  args+=(--set $NAME icon.background.y_offset=-20)
+fi
 
-sketchybar -m "${args[@]}"
+args+=(icon.highlight=$SELECTED)
+
+sketchybar --animate tanh 20 "${args[@]}"
