@@ -1,7 +1,6 @@
 #!/bin/zsh
-# This script is made to work with the OpenWeatherMap.org API
 
-API_KEY="" # insert api key here
+API_KEY="9c8508bea4766dc4c5a431947d3cbc51" # insert api key here
 CITY="Montreal" # insert city here
 LAT="45.501690" # insert latitude here
 LON="-73.567253" # insert longitude here
@@ -146,9 +145,15 @@ condition=$(echo $data | jq -r '.weather[].id')
 temp=$(echo $data | jq -r '.main.temp')
 feelslike=$(echo $data | jq -r '.main.feels_like')
 humidity=$(echo $data | jq -r '.main.humidity')
-is_day=$(echo $data | jq -r '.dt')
+is_day=$(echo $data | jq -r '.weather[].icon')
+hour=$(date +%H)
 
-[ "$is_day" = "1" ] && icon=$weather_icons_day[$condition] || icon=$weather_icons_night[$condition]
+
+
+[ "$hour" -lt 19 -a "$hour" -ge 6 ] && icon=$weather_icons_day[$condition] || icon=$weather_icons_night[$condition]
+
+
+# [ "$is_day" > "1659260216" && "$is_day" < "1560396563" ] && icon=$weather_icons_day[$condition] || icon=$weather_icons_night[$condition]
 
 sketchybar -m \
     --set weather \
