@@ -94,15 +94,25 @@ _G.packer_plugins = {
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["packer.nvim"] = {
+  ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/packer.nvim",
-    url = "https://github.com/wbthomason/packer.nvim"
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["packer.vim"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/packer.vim",
+    url = "https://github.com/wbthomasom/packer.vim"
   },
   ["presence.nvim"] = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/presence.nvim",
     url = "https://github.com/andweeb/presence.nvim"
+  },
+  ["spelunker.vim"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/spelunker.vim",
+    url = "https://github.com/kamykn/spelunker.vim"
   },
   ["thesaurus_query.vim"] = {
     loaded = true,
