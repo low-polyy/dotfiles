@@ -5,17 +5,26 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'ron89/thesaurus_query.vim'
 Plug 'kamykn/spelunker.vim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'preservim/nerdtree'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'andweeb/presence.nvim'
 call plug#end()
 
+" == CODING ==
+"Nerd tree stuff
+"Toggle Nerd tree on (fn+2)
+map <F2> :NERDTree <bar> <CR>
 
+
+
+" == WRITING ==
 set autoindent
 set linebreak
 set wrap
 set nospell
-
+set tabstop=4
+set softtabstop=0 noexpandtab
+set shiftwidth=4
 
 "SoftPencil mode on/off (fn+8)
 map <F8> :SoftPencil <bar> <CR>

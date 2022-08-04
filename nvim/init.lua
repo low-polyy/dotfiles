@@ -1,52 +1,40 @@
-local execute = vim.api.nvim_command
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-
-
-
-require('packer').startup(function(use)
-	
-	use 'wbthomason/packer.nvim'
-	
-	use 'andweeb/presence.nvim'
-	use 'nvim-lualine/lualine.nvim'
-	use 'hrsh7th/nvim-cmp'
-
-	use 'preservim/vim-pencil'
-	use 'junegunn/goyo.vim'
-	use 'junegunn/limelight.vim'
-	use	'ron89/thesaurus_query.vim'
-
-
-	if install_plugins then
-		require('packer').sync()
-	end
-end)
-
-
-if install_plugins then
-	return
-end
-
-
-
 -- ======= --
+-- plugins --
+-- ======= --
+
+
+require('plugins')
+require('plugin_conf.dashboard')
+require('plugin_conf.lualine')
+
+
+
+
+-- =============== --
 -- editor settings --
--- ======= --
+-- =============== --
 vim.opt.autoindent = true
 vim.opt.wrap = true
 vim.opt.breakindent = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
--- ======= --
+vim.opt.thesaurus = "/Users/ura0aka/.config/nvim/thesaurus/mthesaur.txt"
+vim.opt.complete = s
+
+
+
+-- ======== --
 -- keybinds --
--- ======= --
+-- ======== --
 keymap = vim.keymap.set
 -- SoftPencil mode on/off
 keymap ('n', '<F8>', ':SoftPencil <bar> <CR>')
 -- Goyo mode on/off
 keymap ('n', '<F9>', ':Goyo <bar> <CR>')
+-- LimeLight on/off
+keymap ('n', '<F10>', ':Limelight0.5 <bar> <CR>')
+
 
 -- Thesaurus & spell checking --
 -- Set spell checking to English(US)
@@ -55,15 +43,3 @@ keymap ('n', '<F6>', ':setlocal spell! spelllang=en_us <CR>')
 keymap ('n', '<F7>', ':setlocal spell! spelllang=fr <CR>')
 
 
--- ====== --
--- plugins --
--- ====== --
-
-vim.opt.showmode = false
-require('lualine').setup({
-	options = {
-		icons_enabled = false,
-		component_separators = '|',
-		section_separators = '',
-	},
-})
