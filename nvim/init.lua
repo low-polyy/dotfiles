@@ -33,7 +33,7 @@ keymap ('n', '<F8>', ':SoftPencil <bar> <CR>')
 -- Goyo mode on/off
 keymap ('n', '<F9>', ':Goyo <bar> <CR>')
 -- LimeLight on/off
-keymap ('n', '<F10>', ':Limelight <bar> <CR>')
+keymap ('n', '<F10>', ':Limelight!! <bar> <CR>')
 vim.g.limelight_conceal_ctermfg = 'gray'
 
 -- Thesaurus & spell checking --
