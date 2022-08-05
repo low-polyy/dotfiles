@@ -69,6 +69,26 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
@@ -84,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/limelight.vim",
     url = "https://github.com/junegunn/limelight.vim"
   },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -93,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -109,6 +139,11 @@ _G.packer_plugins = {
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/packer.vim",
     url = "https://github.com/wbthomasom/packer.vim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
   ["presence.nvim"] = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/presence.nvim",
@@ -119,15 +154,30 @@ _G.packer_plugins = {
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/spelunker.vim",
     url = "https://github.com/kamykn/spelunker.vim"
   },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
   ["thesaurus_query.vim"] = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/thesaurus_query.vim",
     url = "https://github.com/ron89/thesaurus_query.vim"
   },
+  ["toggle-lsp-diagnostics.nvim"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/toggle-lsp-diagnostics.nvim",
+    url = "https://github.com/WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
+  },
   ["vim-pencil"] = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/vim-pencil",
     url = "https://github.com/preservim/vim-pencil"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   }
 }
 

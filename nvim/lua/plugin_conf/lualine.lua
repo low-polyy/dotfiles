@@ -1,4 +1,4 @@
-local custom_gruvbox = require'lualine.color_schemes.custom_gruvbox'
+local custom_gruvbox = require'lualine_conf.color_schemes.custom_gruvbox'
 
 require('lualine').setup({
 	options = {

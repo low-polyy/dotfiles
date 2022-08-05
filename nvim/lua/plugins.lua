@@ -1,6 +1,8 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 local install path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_plugins = false
+
 
 require('packer').startup(function(use)
 	use 'wbthomasom/packer.vim'
@@ -9,7 +11,7 @@ require('packer').startup(function(use)
 	use 'andweeb/presence.nvim'
 	use 'nvim-lualine/lualine.nvim'
 	use 'glepnir/dashboard-nvim'
-
+	use 'hrsh7th/vim-vsnip'
 	-- writing
 	use 'preservim/vim-pencil'
 	use 'junegunn/limelight.vim'
@@ -22,9 +24,24 @@ require('packer').startup(function(use)
 	use {
   	'kyazdani42/nvim-tree.lua',
   		requires = {
-    		'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    		'kyazdani42/nvim-web-devicons', 
 		}
 	}
+
+	use {
+  	'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  		requires = {
+	  		'nvim-lua/plenary.nvim'
+  		}
+	}
+	use 'neovim/nvim-lspconfig'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/nvim-cmp'
+	use 'onsails/lspkind-nvim'
+	use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 
 	-- general
 	

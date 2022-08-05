@@ -9,7 +9,10 @@ vim.g.mapleader = ' '
 ------------
 -- Nvim-tree toggle 
 keymap ('n', '<Leader>e', ':NvimTreeToggle <CR>')
-
+-- Telescope toggle
+keymap ('n', '<Leader>f', ':Telescope find_files <CR>')
+-- Lsp-diagnostics toggle 
+keymap ('n', '<Leader>t', ':ToggleDiag <CR>')
 -------------
 -- Writing --
 -------------
