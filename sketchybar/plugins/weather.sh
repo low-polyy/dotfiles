@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-# this is made to work with the OpenWeatherMap.org API
 API_KEY="9c8508bea4766dc4c5a431947d3cbc51" # insert api key here
 CITY="Montreal" # insert city here
 LAT="45.501690" # insert latitude here
@@ -152,8 +151,6 @@ hour=$(date +%H)
 
 
 [ "$hour" -lt 19 -a "$hour" -ge 6 ] && icon=$weather_icons_day[$condition] || icon=$weather_icons_night[$condition]
-
-
 
 sketchybar -m \
     --set weather \
