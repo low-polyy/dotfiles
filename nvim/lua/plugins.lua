@@ -18,6 +18,8 @@ require('packer').startup(function(use)
 	use 'junegunn/goyo.vim'
 	use 'ron89/thesaurus_query.vim'
 	use 'kamykn/spelunker.vim'
+	use 'uga-rosa/cmp-dictionary'
+	use 'f3fora/cmp-spell'
 
 	-- coding	
 	use 'hrsh7th/nvim-cmp'

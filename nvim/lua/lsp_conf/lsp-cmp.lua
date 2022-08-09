@@ -1,6 +1,21 @@
 local cmp = require'cmp'
 local lspkind = require('lspkind')
 
+require("cmp_dictionary").setup({
+	dic = {
+		["*"] = { "/usr/share/dict/words" },
+	},
+	spelllang = {
+		en = "/Users/ura0aka/.config/nvim/thesaurus/mthesaur.txt",
+	},
+	-- The following are default values, so you don't need to write them if you don't want to change them
+	exact = 2,
+	async = true,
+	capacity = 5,
+	debug = false,
+})
+
+
 cmp.setup({
     formatting = {
     format = lspkind.cmp_format({

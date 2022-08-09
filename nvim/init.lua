@@ -26,4 +26,3 @@ vim.opt.termguicolors = false
 vim.opt.thesaurus = "/Users/ura0aka/.config/nvim/thesaurus/mthesaur.txt"
 vim.opt.complete = s
 
-

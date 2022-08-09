@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
+  ["cmp-dictionary"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/cmp-dictionary",
+    url = "https://github.com/uga-rosa/cmp-dictionary"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -88,6 +93,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-spell"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/cmp-spell",
+    url = "https://github.com/f3fora/cmp-spell"
   },
   ["dashboard-nvim"] = {
     loaded = true,
