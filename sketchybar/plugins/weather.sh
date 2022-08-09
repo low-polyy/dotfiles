@@ -141,7 +141,7 @@ weather_icons_night=(
 
 CITY=$(echo "$CITY" | curl -Gso /dev/null -w %{url_effective} --data-urlencode @- "" | cut -c 3- || true)
 data=$(curl -s "https://api.openweathermap.org/data/2.5/weather?lat=$LAT&lon=$LON&appid=$API_KEY&$METRIC")
-condition=$(echo $data | jq -r '.weather[].id')
+condition=$(echo $data | jq -r '.weather[0].id')
 temp=$(echo $data | jq -r '.main.temp')
 feelslike=$(echo $data | jq -r '.main.feels_like')
 humidity=$(echo $data | jq -r '.main.humidity')
