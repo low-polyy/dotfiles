@@ -4,6 +4,9 @@
 keymap = vim.keymap.set
 vim.g.mapleader = ' '
 
+
+-- Create new file
+keymap ('n', '<Leader>n', ':enew <CR>')
 ------------
 -- Coding --
 ------------

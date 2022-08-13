@@ -5,14 +5,19 @@ local install_plugins = false
 
 
 require('packer').startup(function(use)
-	-- use 'wbthomasom/packer.vim'
+	use 'wbthomasom/packer.vim'
 
 	-- appearance  
 	use 'andweeb/presence.nvim'
 	use 'nvim-lualine/lualine.nvim'
 	use 'glepnir/dashboard-nvim'
 	use 'hrsh7th/vim-vsnip'
+	use {
+		'akinsho/bufferline.nvim', tag = "v2.*",
+		requires = 'kyazdani42/nvim-web-devicons'
+	}
 	use 'sainnhe/gruvbox-material'
+
 	-- writing
 	use 'preservim/vim-pencil'
 	use 'junegunn/limelight.vim'
