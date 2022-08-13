@@ -53,6 +53,7 @@ require('packer').startup(function(use)
 	use 'hrsh7th/nvim-cmp'
 	use 'onsails/lspkind-nvim'
 	use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+	use 'windwp/nvim-autopairs'
 
 	-- general
 	
