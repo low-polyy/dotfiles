@@ -5,13 +5,14 @@ local install_plugins = false
 
 
 require('packer').startup(function(use)
-	use 'wbthomasom/packer.vim'
+	-- use 'wbthomasom/packer.vim'
 
 	-- appearance  
 	use 'andweeb/presence.nvim'
 	use 'nvim-lualine/lualine.nvim'
 	use 'glepnir/dashboard-nvim'
 	use 'hrsh7th/vim-vsnip'
+	use 'sainnhe/gruvbox-material'
 	-- writing
 	use 'preservim/vim-pencil'
 	use 'junegunn/limelight.vim'
@@ -36,6 +37,9 @@ require('packer').startup(function(use)
 	  		'nvim-lua/plenary.nvim'
   		}
 	}
+
+	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'

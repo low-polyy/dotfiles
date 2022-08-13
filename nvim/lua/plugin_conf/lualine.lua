@@ -2,7 +2,7 @@ local custom_gruvbox = require'lualine_conf.color_schemes.custom_gruvbox'
 
 require('lualine').setup({
 	options = {
-		theme = custom_gruvbox,
+		theme = 'gruvbox-material',
     	icons_enabled = true,
     	component_separators = '|',
     	section_separators = '',

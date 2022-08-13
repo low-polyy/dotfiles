@@ -20,8 +20,11 @@ vim.opt.wrap = true
 vim.opt.breakindent = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 
+vim.g.gruvbox_material_background = 'soft'
+vim.g.gruvbox_material_better_performance = 1
+vim.cmd "colorscheme gruvbox-material"
 
 vim.opt.thesaurus = "/Users/ura0aka/.config/nvim/thesaurus/mthesaur.txt"
 vim.opt.complete = s

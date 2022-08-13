@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/goyo.vim",
     url = "https://github.com/junegunn/goyo.vim"
   },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
+  },
   ["limelight.vim"] = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/limelight.vim",
@@ -144,11 +149,6 @@ _G.packer_plugins = {
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["packer.vim"] = {
-    loaded = true,
-    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/packer.vim",
-    url = "https://github.com/wbthomasom/packer.vim"
-  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -163,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/spelunker.vim",
     url = "https://github.com/kamykn/spelunker.vim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
