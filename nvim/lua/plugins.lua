@@ -27,6 +27,7 @@ require('packer').startup(function(use)
 	use 'uga-rosa/cmp-dictionary'
 	use 'f3fora/cmp-spell'
 
+
 	-- coding	
 	use 'hrsh7th/nvim-cmp'
 	use {
