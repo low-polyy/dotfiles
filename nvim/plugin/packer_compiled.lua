@@ -109,11 +109,6 @@ _G.packer_plugins = {
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
-  ["goyo.vim"] = {
-    loaded = true,
-    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/goyo.vim",
-    url = "https://github.com/junegunn/goyo.vim"
-  },
   ["gruvbox-material"] = {
     loaded = true,
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/gruvbox-material",
@@ -199,10 +194,10 @@ _G.packer_plugins = {
     path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/toggle-lsp-diagnostics.nvim",
     url = "https://github.com/WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
   },
-  ["vim-latex-live-preview"] = {
+  ["true-zen.nvim"] = {
     loaded = true,
-    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/vim-latex-live-preview",
-    url = "https://github.com/xuhdev/vim-latex-live-preview"
+    path = "/Users/ura0aka/.local/share/nvim/site/pack/packer/start/true-zen.nvim",
+    url = "https://github.com/Pocco81/true-zen.nvim"
   },
   ["vim-pencil"] = {
     loaded = true,

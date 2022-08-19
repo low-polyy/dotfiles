@@ -18,7 +18,6 @@ require('lualine').setup({
 	},
 
 	refresh = {
-		statusline = 15000,
-		tabline = 15000,
+		statusline = 15000
 	},
 })

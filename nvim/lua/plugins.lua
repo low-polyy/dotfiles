@@ -21,7 +21,8 @@ require('packer').startup(function(use)
 	-- writing
 	use 'preservim/vim-pencil'
 	use 'junegunn/limelight.vim'
-	use 'junegunn/goyo.vim'
+--	use 'junegunn/goyo.vim'
+	use 'Pocco81/true-zen.nvim'
 	use 'ron89/thesaurus_query.vim'
 	use 'kamykn/spelunker.vim'
 	use 'uga-rosa/cmp-dictionary'

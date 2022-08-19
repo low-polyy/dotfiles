@@ -12,10 +12,12 @@ require('plugin_conf.telescope')
 require('lsp_conf.lsp-config')
 require('lsp_conf.lsp-cmp')
 require('plugin_conf.toggle_lsp_diagnostics')
-require('plugin_conf.bufferline')
+-- require('plugin_conf.bufferline')
 require('plugin_conf.autopairs')
  -- require('plugin_conf.colorizer')
-
+require('true-zen.ataraxis')
+require('true-zen.narrow')
+require('true-zen.minimalist')
 -- =============== --
 -- editor settings --
 -- =============== --
