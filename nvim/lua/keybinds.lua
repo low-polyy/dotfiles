@@ -30,9 +30,9 @@ vim.g.limelight_conceal_ctermfg = 'gray'
 
 -- Thesaurus & spell checking --
 -- Set spell checking to English(US)
-keymap ('n', '<F6>', ':setlocal spell! spelllang=en_us <CR>')
+keymap ('n', '<F6>', ':setlocal spell! spelllang+=en_us <CR>')
 -- Set spell checking to French
-keymap ('n', '<F7>', ':setlocal spell! spelllang=fr <CR>')
+keymap ('n', '<F7>', ':setlocal spell! spelllang+=fr <bar> :set spell <CR>')
 -- Thesaurus query
 keymap ('n', '<F3>', ':ThesaurusQueryLookupCurrentWord <CR>')
 keymap ('n', '<F4>', ':ThesaurusQueryReplaceCurrentWord <CR>')

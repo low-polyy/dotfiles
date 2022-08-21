@@ -7,6 +7,7 @@ require("cmp_dictionary").setup({
 	},
 	spelllang = {
 		en = "/Users/ura0aka/.config/nvim/thesaurus/mthesaur.txt",
+		fr = "/usr/share/dict/"
 	},
 	-- The following are default values, so you don't need to write them if you don't want to change them
 	exact = 2,
