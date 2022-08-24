@@ -7,7 +7,8 @@ sketchybar --set ${NAME} icon.color=0xffd4be98
 
 if [[ ${CHARGING} != "" ]]; then
   sketchybar --set ${NAME} icon=""
-  sketchybar --set ${NAME} icon.color=0xff689d69
+  sketchybar --set ${NAME} icon.color=0xff989719
+  sketchybar --set ${NAME} icon.font="Hack Nerd Font:Bold:14.0"
   sketchybar --set ${NAME} label="${BATT_PERCENT}%"
   exit 0
 fi
@@ -27,4 +28,5 @@ case ${BATT_PERCENT} in
 esac
 
 sketchybar --set ${NAME} icon="${ICON}"
+sketchybar --set ${NAME} icon.font="Hack Nerd Font:Bold:14.0"
 sketchybar --set ${NAME} label="${BATT_PERCENT}%"

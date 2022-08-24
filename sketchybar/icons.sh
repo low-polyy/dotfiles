@@ -58,3 +58,7 @@ YABAI_GRID=􀧍
 # svim Icons
 VIM=
 
+# Wifi Icons
+WIFI_ICN=􀙇
+NETWORK_ICN=􀤆
+SPEED_ICN=􀍾
