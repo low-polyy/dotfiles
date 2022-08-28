@@ -15,7 +15,7 @@ sketchybar --add item           wifi.control right                      \
                                 label="${SSID}"                         \
                                                                         \
            --add item           wifi.speed     popup.wifi.control       \
-           --set wifi.speed     icon=$SPEED_ICN                        \
-                                script="$PLUGIN_DIR/wifi_click.sh"        \
-                                update_freq=10                          \
+           --set wifi.speed     icon=$SPEED_ICN                         \
+                                script="$PLUGIN_DIR/wifi_click.sh"      \
+                                update_freq=5                           \
 
