@@ -8,7 +8,7 @@
  */
 
 configuration {
-	font:							"Terminus 9";
+	font:							"Cascadia Code 11";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"";

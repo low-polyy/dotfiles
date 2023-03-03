@@ -23,7 +23,7 @@ confirm_exit() {
 		-no-config\
         -i\
 		-no-fixed-num-lines\
-		-p "Are You Sure? : "\
+		-p "Are you sure? : "\
 		-theme $dir/confirm.rasi
 }
 
@@ -58,10 +58,10 @@ case $chosen in
         fi
         ;;
     $lock)
-		if [[ -f /usr/bin/i3lock ]]; then
+		if [[ -f /usr/local/bin/betterlockscreen ]]; then
+			betterlockscreen -l dim
+		elif [[ -f /usr/bin/i3lock ]]; then
 			i3lock
-		elif [[ -f /usr/bin/betterlockscreen ]]; then
-			betterlockscreen -l
 		fi
         ;;
     $suspend)
