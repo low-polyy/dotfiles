@@ -1,8 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-
 export PATH=$HOME/.local/bin:$PATH
-export PATH=/home/max/.local/bin/lvim:$PATH
-export PATH=/home/max/.cargo/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -105,6 +102,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
